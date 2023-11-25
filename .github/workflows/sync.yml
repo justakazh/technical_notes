@@ -1,21 +1,18 @@
-name: Receive Webhook from Repository B 
+name: Trigger Repository A
 
 on:
-  repository_dispatch:
-    types:
-      - repoB-push
+  push:
+    branches:
+      - main
 
 jobs:
-  update-content:
+  notify-repoA:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository A
-      uses: actions/checkout@v2
-
-    - name: Update Content from Repository B
-      run: |
-        git submodule update --init --recursive
-        git submodule sync --recursive
-        git submodule foreach --recursive 'git fetch origin --tags'
-        git submodule foreach --recursive 'git pull origin main'
+    - name: Trigger Repository A
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.REPO_B_TOKEN }}
+        repository: justakazh/docs
+        event-type: "repoB-push"
