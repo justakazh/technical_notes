@@ -1,5 +1,5 @@
 ---
-title: Justakazh Documentationxx
+title: Justakazh Documentation
 ---
 
 ## 👋 Hi There !
