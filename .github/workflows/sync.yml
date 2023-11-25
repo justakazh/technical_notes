@@ -1,0 +1,21 @@
+name: Receive Webhook from Repository B 
+
+on:
+  repository_dispatch:
+    types:
+      - repoB-push
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository A
+      uses: actions/checkout@v2
+
+    - name: Update Content from Repository B
+      run: |
+        git submodule update --init --recursive
+        git submodule sync --recursive
+        git submodule foreach --recursive 'git fetch origin --tags'
+        git submodule foreach --recursive 'git pull origin main'
