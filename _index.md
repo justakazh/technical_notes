@@ -1,5 +1,5 @@
 ---
-title: Justakazh Documentationxxxxxxxxx
+title: Justakazh Documentation
 ---
 
 ## 👋 Hi There !
@@ -17,5 +17,5 @@ My documentation is designed as a space for me to record and, of course, share k
 
 ### ✨ Let's Contribute
 
-We weeelcomex Contributions from the community! If you have insights, additional tips, or want to share your expertise, feel free to contribute. Together, we can make this documentation a valuable resource for everyone.
+I'm welcome Contributions from the community! If you have insights, additional tips, or want to share your expertise, feel free to contribute. Together, we can make this documentation a valuable resource for everyone.
 
